@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uPy-UT-3DW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Record-->
@@ -58,12 +59,12 @@
                                 <exclude reference="Y31-HD-71g"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="OlO-pJ-fsI"/>
-                                <exclude reference="ZNb-AB-lKw"/>
+                                <exclude reference="jLc-Px-dTJ"/>
                                 <exclude reference="DvP-nl-ciW"/>
                                 <exclude reference="i2i-RW-WT0"/>
+                                <exclude reference="OlO-pJ-fsI"/>
+                                <exclude reference="ZNb-AB-lKw"/>
                                 <exclude reference="DUR-qE-3ld"/>
-                                <exclude reference="jLc-Px-dTJ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -73,12 +74,12 @@
                                 <include reference="Y31-HD-71g"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="OlO-pJ-fsI"/>
-                                <include reference="ZNb-AB-lKw"/>
+                                <include reference="jLc-Px-dTJ"/>
                                 <include reference="DvP-nl-ciW"/>
                                 <include reference="i2i-RW-WT0"/>
+                                <include reference="OlO-pJ-fsI"/>
+                                <include reference="ZNb-AB-lKw"/>
                                 <include reference="DUR-qE-3ld"/>
-                                <include reference="jLc-Px-dTJ"/>
                             </mask>
                         </variation>
                     </view>
@@ -93,17 +94,85 @@
             </objects>
             <point key="canvasLocation" x="1300.5" y="-446"/>
         </scene>
-        <!--View Controller-->
+        <!--Play Sound View Controller-->
         <scene sceneID="0E5-m7-Trl">
             <objects>
-                <viewController id="qsl-td-8Uy" sceneMemberID="viewController">
+                <viewController id="qsl-td-8Uy" customClass="PlaySoundViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DB7-5g-mvP"/>
                         <viewControllerLayoutGuide type="bottom" id="xnl-F4-17F"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="l2c-MK-DDf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VjS-s9-QDf">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="slowPlayButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSoundSlow:" destination="qsl-td-8Uy" eventType="touchUpInside" id="Osm-1T-3z5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmA-Sb-D6h">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="fastPlayButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSoundFast:" destination="qsl-td-8Uy" eventType="touchUpInside" id="uJX-Ew-fGY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ca3-VX-ztf">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stopButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopPlayback:" destination="qsl-td-8Uy" eventType="touchUpInside" id="Bl7-Az-QgG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VjS-s9-QDf" firstAttribute="leading" secondItem="l2c-MK-DDf" secondAttribute="leadingMargin" constant="24" id="6fc-xg-yFa"/>
+                            <constraint firstItem="VjS-s9-QDf" firstAttribute="top" secondItem="DB7-5g-mvP" secondAttribute="bottom" constant="56" id="HQH-z0-stY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WmA-Sb-D6h" secondAttribute="trailing" constant="24" id="fdO-8d-cXm"/>
+                            <constraint firstAttribute="centerX" secondItem="ca3-VX-ztf" secondAttribute="centerX" id="foz-Qb-p52"/>
+                            <constraint firstItem="xnl-F4-17F" firstAttribute="top" secondItem="ca3-VX-ztf" secondAttribute="bottom" constant="50" id="tXh-9l-e6s"/>
+                            <constraint firstItem="WmA-Sb-D6h" firstAttribute="top" secondItem="DB7-5g-mvP" secondAttribute="bottom" constant="56" id="yyi-e0-elV"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="VjS-s9-QDf"/>
+                                <exclude reference="WmA-Sb-D6h"/>
+                                <exclude reference="ca3-VX-ztf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="6fc-xg-yFa"/>
+                                <exclude reference="HQH-z0-stY"/>
+                                <exclude reference="fdO-8d-cXm"/>
+                                <exclude reference="yyi-e0-elV"/>
+                                <exclude reference="foz-Qb-p52"/>
+                                <exclude reference="tXh-9l-e6s"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="VjS-s9-QDf"/>
+                                <include reference="WmA-Sb-D6h"/>
+                                <include reference="ca3-VX-ztf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="6fc-xg-yFa"/>
+                                <include reference="HQH-z0-stY"/>
+                                <include reference="fdO-8d-cXm"/>
+                                <include reference="yyi-e0-elV"/>
+                                <include reference="foz-Qb-p52"/>
+                                <include reference="tXh-9l-e6s"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rjo-xX-cet" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -130,7 +199,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fastPlayButton" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
+        <image name="slowPlayButton" width="100" height="100"/>
         <image name="stopButton" width="50" height="50"/>
     </resources>
 </document>

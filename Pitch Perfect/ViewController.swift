@@ -26,19 +26,19 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         //Hide the stop button
-        stopButton.hidden = true;
-        recordButton.enabled = true;
+        stopButton.hidden = true
+        recordButton.enabled = true
     }
     @IBAction func recordAudio(sender: UIButton) {
-        recordingInProgress.hidden = false;
-        stopButton.hidden = false;
-        recordButton.enabled = false;
+        recordingInProgress.hidden = false
+        stopButton.hidden = false
+        recordButton.enabled = false
         //TODO: Record the user's voice
-        println("in recordAudio");
+        println("in recordAudio")
     }
 
     @IBAction func stopRecording(sender: UIButton) {
-        recordingInProgress.hidden = true;
+        recordingInProgress.hidden = true
     }
 }
 
