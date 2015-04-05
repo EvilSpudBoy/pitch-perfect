@@ -49,6 +49,10 @@ class PlaySoundsViewController: UIViewController {
         playAudioWithVariablePitch(-1000)
     }
     
+    @IBAction func playSoundEcho(sender: UIButton) {
+        playAudioWithEcho()
+    }
+    
     func playbackAudioAtRate(rate: Float) {
         audioEngine.stop()
         audioPlayer.stop()
@@ -58,6 +62,21 @@ class PlaySoundsViewController: UIViewController {
     }
     
     func playAudioWithVariablePitch(pitch: Float) {
+        var changePitchEffect = AVAudioUnitTimePitch()
+        changePitchEffect.pitch = pitch
+        
+        playAudioWithEffect(changePitchEffect)
+    }
+    
+    func playAudioWithEcho() {
+        var echoEffect = AVAudioUnitDelay()
+        echoEffect.delayTime = 0.5
+        echoEffect.feedback = 0.9
+        
+        playAudioWithEffect(echoEffect)
+    }
+    
+    func playAudioWithEffect(effect: AVAudioUnit) {
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
@@ -65,17 +84,14 @@ class PlaySoundsViewController: UIViewController {
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
         
-        var changePitchEffect = AVAudioUnitTimePitch()
-        changePitchEffect.pitch = pitch
-        audioEngine.attachNode(changePitchEffect)
+        audioEngine.attachNode(effect)
         
-        audioEngine.connect(audioPlayerNode, to: changePitchEffect, format: nil)
-        audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
+        audioEngine.connect(audioPlayerNode, to: effect, format: nil)
+        audioEngine.connect(effect, to: audioEngine.outputNode, format: nil)
         
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
         audioEngine.startAndReturnError(nil)
         
         audioPlayerNode.play()
     }
-    
 }

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uPy-UT-3DW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -40,9 +41,6 @@
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
                                 <color key="textColor" red="0.14509803921568626" green="0.28235294117647058" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="150" y="368" width="96" height="14"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -61,12 +59,12 @@
                                 <exclude reference="cpm-ra-heY"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="OlO-pJ-fsI"/>
-                                <exclude reference="ZNb-AB-lKw"/>
+                                <exclude reference="jLc-Px-dTJ"/>
                                 <exclude reference="Ckx-tC-SlX"/>
                                 <exclude reference="i2i-RW-WT0"/>
+                                <exclude reference="OlO-pJ-fsI"/>
+                                <exclude reference="ZNb-AB-lKw"/>
                                 <exclude reference="DUR-qE-3ld"/>
-                                <exclude reference="jLc-Px-dTJ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -76,12 +74,12 @@
                                 <include reference="cpm-ra-heY"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="OlO-pJ-fsI"/>
-                                <include reference="ZNb-AB-lKw"/>
+                                <include reference="jLc-Px-dTJ"/>
                                 <include reference="Ckx-tC-SlX"/>
                                 <include reference="i2i-RW-WT0"/>
+                                <include reference="OlO-pJ-fsI"/>
+                                <include reference="ZNb-AB-lKw"/>
                                 <include reference="DUR-qE-3ld"/>
-                                <include reference="jLc-Px-dTJ"/>
                             </mask>
                         </variation>
                     </view>
@@ -154,19 +152,30 @@
                                     <action selector="playSoundVader:" destination="qsl-td-8Uy" eventType="touchUpInside" id="PQN-6r-O46"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLV-OM-L0I">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="echoPlayButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSoundEcho:" destination="qsl-td-8Uy" eventType="touchUpInside" id="MgG-tS-JN3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="XLV-OM-L0I" secondAttribute="centerX" id="23x-4h-Crz"/>
                             <constraint firstItem="VjS-s9-QDf" firstAttribute="leading" secondItem="l2c-MK-DDf" secondAttribute="leadingMargin" constant="24" id="6fc-xg-yFa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nfv-eL-xho" secondAttribute="trailing" constant="24" id="D86-F5-9c7"/>
-                            <constraint firstItem="VjS-s9-QDf" firstAttribute="top" secondItem="DB7-5g-mvP" secondAttribute="bottom" constant="56" id="HQH-z0-stY"/>
-                            <constraint firstItem="nfv-eL-xho" firstAttribute="top" secondItem="WmA-Sb-D6h" secondAttribute="bottom" constant="30" id="IPY-bB-5S5"/>
+                            <constraint firstItem="VjS-s9-QDf" firstAttribute="top" secondItem="DB7-5g-mvP" secondAttribute="bottom" constant="30" id="HQH-z0-stY"/>
+                            <constraint firstItem="nfv-eL-xho" firstAttribute="top" secondItem="WmA-Sb-D6h" secondAttribute="bottom" constant="20" id="IPY-bB-5S5"/>
                             <constraint firstItem="mO7-7a-drg" firstAttribute="leading" secondItem="l2c-MK-DDf" secondAttribute="leadingMargin" constant="24" id="OtH-Aa-9Sc"/>
-                            <constraint firstItem="mO7-7a-drg" firstAttribute="top" secondItem="VjS-s9-QDf" secondAttribute="bottom" constant="30" id="cn4-9k-AfT"/>
+                            <constraint firstItem="mO7-7a-drg" firstAttribute="top" secondItem="VjS-s9-QDf" secondAttribute="bottom" constant="20" id="cn4-9k-AfT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WmA-Sb-D6h" secondAttribute="trailing" constant="24" id="fdO-8d-cXm"/>
                             <constraint firstAttribute="centerX" secondItem="ca3-VX-ztf" secondAttribute="centerX" id="foz-Qb-p52"/>
+                            <constraint firstItem="XLV-OM-L0I" firstAttribute="top" secondItem="mO7-7a-drg" secondAttribute="bottom" constant="20" id="jjW-V5-zvC"/>
                             <constraint firstItem="xnl-F4-17F" firstAttribute="top" secondItem="ca3-VX-ztf" secondAttribute="bottom" constant="50" id="tXh-9l-e6s"/>
-                            <constraint firstItem="WmA-Sb-D6h" firstAttribute="top" secondItem="DB7-5g-mvP" secondAttribute="bottom" constant="56" id="yyi-e0-elV"/>
+                            <constraint firstItem="WmA-Sb-D6h" firstAttribute="top" secondItem="DB7-5g-mvP" secondAttribute="bottom" constant="30" id="yyi-e0-elV"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -175,6 +184,7 @@
                                 <exclude reference="ca3-VX-ztf"/>
                                 <exclude reference="mO7-7a-drg"/>
                                 <exclude reference="nfv-eL-xho"/>
+                                <exclude reference="XLV-OM-L0I"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="6fc-xg-yFa"/>
@@ -185,6 +195,8 @@
                                 <exclude reference="yyi-e0-elV"/>
                                 <exclude reference="D86-F5-9c7"/>
                                 <exclude reference="IPY-bB-5S5"/>
+                                <exclude reference="23x-4h-Crz"/>
+                                <exclude reference="jjW-V5-zvC"/>
                                 <exclude reference="foz-Qb-p52"/>
                                 <exclude reference="tXh-9l-e6s"/>
                             </mask>
@@ -196,6 +208,7 @@
                                 <include reference="ca3-VX-ztf"/>
                                 <include reference="mO7-7a-drg"/>
                                 <include reference="nfv-eL-xho"/>
+                                <include reference="XLV-OM-L0I"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="6fc-xg-yFa"/>
@@ -206,6 +219,8 @@
                                 <include reference="yyi-e0-elV"/>
                                 <include reference="D86-F5-9c7"/>
                                 <include reference="IPY-bB-5S5"/>
+                                <include reference="23x-4h-Crz"/>
+                                <include reference="jjW-V5-zvC"/>
                                 <include reference="foz-Qb-p52"/>
                                 <include reference="tXh-9l-e6s"/>
                             </mask>
@@ -238,6 +253,7 @@
     <resources>
         <image name="chipmunkPlayButton" width="100" height="100"/>
         <image name="darthVaderPlayButton" width="100" height="100"/>
+        <image name="echoPlayButton" width="100" height="100"/>
         <image name="fastPlayButton" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slowPlayButton" width="100" height="100"/>
