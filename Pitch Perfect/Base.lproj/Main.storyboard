@@ -8,7 +8,7 @@
         <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RecordSoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -26,12 +26,6 @@
                                     <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rdi-ej-5vb"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpm-ra-heY">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
-                                <color key="textColor" red="0.14509803921568626" green="0.28235294117647058" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y31-HD-71g">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="stopButton">
@@ -39,14 +33,22 @@
                                 </state>
                                 <connections>
                                     <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0NF-Cb-9TU"/>
-                                    <segue destination="qsl-td-8Uy" kind="show" id="oqk-y2-eSe"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpm-ra-heY">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                                <color key="textColor" red="0.14509803921568626" green="0.28235294117647058" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="150" y="368" width="96" height="14"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cpm-ra-heY" firstAttribute="top" secondItem="TfU-16-url" secondAttribute="bottom" constant="18" id="Ckx-tC-SlX"/>
                             <constraint firstAttribute="centerX" secondItem="Y31-HD-71g" secondAttribute="centerX" id="DUR-qE-3ld"/>
-                            <constraint firstItem="cpm-ra-heY" firstAttribute="top" secondItem="TfU-16-url" secondAttribute="bottom" constant="35" id="DvP-nl-ciW"/>
                             <constraint firstAttribute="centerX" secondItem="TfU-16-url" secondAttribute="centerX" id="OlO-pJ-fsI"/>
                             <constraint firstAttribute="centerY" secondItem="TfU-16-url" secondAttribute="centerY" id="ZNb-AB-lKw"/>
                             <constraint firstAttribute="centerX" secondItem="cpm-ra-heY" secondAttribute="centerX" id="i2i-RW-WT0"/>
@@ -55,31 +57,31 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="TfU-16-url"/>
-                                <exclude reference="cpm-ra-heY"/>
                                 <exclude reference="Y31-HD-71g"/>
+                                <exclude reference="cpm-ra-heY"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="jLc-Px-dTJ"/>
-                                <exclude reference="DvP-nl-ciW"/>
-                                <exclude reference="i2i-RW-WT0"/>
                                 <exclude reference="OlO-pJ-fsI"/>
                                 <exclude reference="ZNb-AB-lKw"/>
+                                <exclude reference="Ckx-tC-SlX"/>
+                                <exclude reference="i2i-RW-WT0"/>
                                 <exclude reference="DUR-qE-3ld"/>
+                                <exclude reference="jLc-Px-dTJ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="TfU-16-url"/>
-                                <include reference="cpm-ra-heY"/>
                                 <include reference="Y31-HD-71g"/>
+                                <include reference="cpm-ra-heY"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="jLc-Px-dTJ"/>
-                                <include reference="DvP-nl-ciW"/>
-                                <include reference="i2i-RW-WT0"/>
                                 <include reference="OlO-pJ-fsI"/>
                                 <include reference="ZNb-AB-lKw"/>
+                                <include reference="Ckx-tC-SlX"/>
+                                <include reference="i2i-RW-WT0"/>
                                 <include reference="DUR-qE-3ld"/>
+                                <include reference="jLc-Px-dTJ"/>
                             </mask>
                         </variation>
                     </view>
@@ -88,16 +90,17 @@
                         <outlet property="recordButton" destination="TfU-16-url" id="pmC-8C-Uqf"/>
                         <outlet property="recordingInProgress" destination="cpm-ra-heY" id="71J-Hp-i1I"/>
                         <outlet property="stopButton" destination="Y31-HD-71g" id="We2-ZX-Flr"/>
+                        <segue destination="qsl-td-8Uy" kind="show" identifier="stopRecording" id="jBQ-BE-Lqa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1300.5" y="-446"/>
         </scene>
-        <!--Play Sound View Controller-->
+        <!--Play Sounds View Controller-->
         <scene sceneID="0E5-m7-Trl">
             <objects>
-                <viewController id="qsl-td-8Uy" customClass="PlaySoundViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qsl-td-8Uy" customClass="PlaySoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DB7-5g-mvP"/>
                         <viewControllerLayoutGuide type="bottom" id="xnl-F4-17F"/>
@@ -133,11 +136,33 @@
                                     <action selector="stopPlayback:" destination="qsl-td-8Uy" eventType="touchUpInside" id="Bl7-Az-QgG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mO7-7a-drg">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="chipmunkPlayButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSoundChipmunk:" destination="qsl-td-8Uy" eventType="touchUpInside" id="SPm-ui-r6S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfv-eL-xho">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="darthVaderPlayButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSoundVader:" destination="qsl-td-8Uy" eventType="touchUpInside" id="PQN-6r-O46"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VjS-s9-QDf" firstAttribute="leading" secondItem="l2c-MK-DDf" secondAttribute="leadingMargin" constant="24" id="6fc-xg-yFa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nfv-eL-xho" secondAttribute="trailing" constant="24" id="D86-F5-9c7"/>
                             <constraint firstItem="VjS-s9-QDf" firstAttribute="top" secondItem="DB7-5g-mvP" secondAttribute="bottom" constant="56" id="HQH-z0-stY"/>
+                            <constraint firstItem="nfv-eL-xho" firstAttribute="top" secondItem="WmA-Sb-D6h" secondAttribute="bottom" constant="30" id="IPY-bB-5S5"/>
+                            <constraint firstItem="mO7-7a-drg" firstAttribute="leading" secondItem="l2c-MK-DDf" secondAttribute="leadingMargin" constant="24" id="OtH-Aa-9Sc"/>
+                            <constraint firstItem="mO7-7a-drg" firstAttribute="top" secondItem="VjS-s9-QDf" secondAttribute="bottom" constant="30" id="cn4-9k-AfT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WmA-Sb-D6h" secondAttribute="trailing" constant="24" id="fdO-8d-cXm"/>
                             <constraint firstAttribute="centerX" secondItem="ca3-VX-ztf" secondAttribute="centerX" id="foz-Qb-p52"/>
                             <constraint firstItem="xnl-F4-17F" firstAttribute="top" secondItem="ca3-VX-ztf" secondAttribute="bottom" constant="50" id="tXh-9l-e6s"/>
@@ -148,12 +173,18 @@
                                 <exclude reference="VjS-s9-QDf"/>
                                 <exclude reference="WmA-Sb-D6h"/>
                                 <exclude reference="ca3-VX-ztf"/>
+                                <exclude reference="mO7-7a-drg"/>
+                                <exclude reference="nfv-eL-xho"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="6fc-xg-yFa"/>
                                 <exclude reference="HQH-z0-stY"/>
+                                <exclude reference="OtH-Aa-9Sc"/>
+                                <exclude reference="cn4-9k-AfT"/>
                                 <exclude reference="fdO-8d-cXm"/>
                                 <exclude reference="yyi-e0-elV"/>
+                                <exclude reference="D86-F5-9c7"/>
+                                <exclude reference="IPY-bB-5S5"/>
                                 <exclude reference="foz-Qb-p52"/>
                                 <exclude reference="tXh-9l-e6s"/>
                             </mask>
@@ -163,12 +194,18 @@
                                 <include reference="VjS-s9-QDf"/>
                                 <include reference="WmA-Sb-D6h"/>
                                 <include reference="ca3-VX-ztf"/>
+                                <include reference="mO7-7a-drg"/>
+                                <include reference="nfv-eL-xho"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="6fc-xg-yFa"/>
                                 <include reference="HQH-z0-stY"/>
+                                <include reference="OtH-Aa-9Sc"/>
+                                <include reference="cn4-9k-AfT"/>
                                 <include reference="fdO-8d-cXm"/>
                                 <include reference="yyi-e0-elV"/>
+                                <include reference="D86-F5-9c7"/>
+                                <include reference="IPY-bB-5S5"/>
                                 <include reference="foz-Qb-p52"/>
                                 <include reference="tXh-9l-e6s"/>
                             </mask>
@@ -199,6 +236,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chipmunkPlayButton" width="100" height="100"/>
+        <image name="darthVaderPlayButton" width="100" height="100"/>
         <image name="fastPlayButton" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slowPlayButton" width="100" height="100"/>

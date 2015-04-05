@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED4FD4EA1AC7042E00BBD43E /* PlaySoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FD4E91AC7042E00BBD43E /* PlaySoundViewController.swift */; };
+		ED4FD4EA1AC7042E00BBD43E /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FD4E91AC7042E00BBD43E /* PlaySoundsViewController.swift */; };
 		ED9BB99F1AC70951004E2CE7 /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED9BB99E1AC70951004E2CE7 /* movie_quote.mp3 */; };
 		EDCE68B61AC0E37C002FB05E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCE68B51AC0E37C002FB05E /* AppDelegate.swift */; };
-		EDCE68B81AC0E37C002FB05E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCE68B71AC0E37C002FB05E /* ViewController.swift */; };
+		EDCE68B81AC0E37C002FB05E /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCE68B71AC0E37C002FB05E /* RecordSoundsViewController.swift */; };
 		EDCE68BB1AC0E37C002FB05E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCE68B91AC0E37C002FB05E /* Main.storyboard */; };
 		EDCE68BD1AC0E37C002FB05E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDCE68BC1AC0E37C002FB05E /* Images.xcassets */; };
 		EDCE68C01AC0E37C002FB05E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCE68BE1AC0E37C002FB05E /* LaunchScreen.xib */; };
 		EDCE68CC1AC0E37C002FB05E /* Pitch_PerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCE68CB1AC0E37C002FB05E /* Pitch_PerfectTests.swift */; };
+		EDE1B1911AC741820033C610 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1B1901AC741820033C610 /* RecordedAudio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,18 +29,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		ED4FD4E91AC7042E00BBD43E /* PlaySoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundViewController.swift; sourceTree = "<group>"; };
+		ED4FD4E91AC7042E00BBD43E /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 		ED9BB99E1AC70951004E2CE7 /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = movie_quote.mp3; path = ../../../../Downloads/movie_quote.mp3; sourceTree = "<group>"; };
 		EDCE68B01AC0E37C002FB05E /* Pitch Perfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pitch Perfect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCE68B41AC0E37C002FB05E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDCE68B51AC0E37C002FB05E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EDCE68B71AC0E37C002FB05E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDCE68B71AC0E37C002FB05E /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
 		EDCE68BA1AC0E37C002FB05E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDCE68BC1AC0E37C002FB05E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EDCE68BF1AC0E37C002FB05E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EDCE68C51AC0E37C002FB05E /* Pitch PerfectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pitch PerfectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCE68CA1AC0E37C002FB05E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDCE68CB1AC0E37C002FB05E /* Pitch_PerfectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pitch_PerfectTests.swift; sourceTree = "<group>"; };
+		EDE1B1901AC741820033C610 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordedAudio.swift; path = ../RecordedAudio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +83,11 @@
 		EDCE68B21AC0E37C002FB05E /* Pitch Perfect */ = {
 			isa = PBXGroup;
 			children = (
+				EDE1B1901AC741820033C610 /* RecordedAudio.swift */,
 				EDCE68B51AC0E37C002FB05E /* AppDelegate.swift */,
-				EDCE68B71AC0E37C002FB05E /* ViewController.swift */,
+				EDCE68B71AC0E37C002FB05E /* RecordSoundsViewController.swift */,
 				EDCE68B91AC0E37C002FB05E /* Main.storyboard */,
-				ED4FD4E91AC7042E00BBD43E /* PlaySoundViewController.swift */,
+				ED4FD4E91AC7042E00BBD43E /* PlaySoundsViewController.swift */,
 				EDCE68BC1AC0E37C002FB05E /* Images.xcassets */,
 				EDCE68BE1AC0E37C002FB05E /* LaunchScreen.xib */,
 				EDCE68B31AC0E37C002FB05E /* Supporting Files */,
@@ -219,8 +222,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDCE68B81AC0E37C002FB05E /* ViewController.swift in Sources */,
-				ED4FD4EA1AC7042E00BBD43E /* PlaySoundViewController.swift in Sources */,
+				EDE1B1911AC741820033C610 /* RecordedAudio.swift in Sources */,
+				EDCE68B81AC0E37C002FB05E /* RecordSoundsViewController.swift in Sources */,
+				ED4FD4EA1AC7042E00BBD43E /* PlaySoundsViewController.swift in Sources */,
 				EDCE68B61AC0E37C002FB05E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
