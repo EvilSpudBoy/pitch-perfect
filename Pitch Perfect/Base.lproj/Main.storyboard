@@ -42,29 +42,70 @@
                                 <color key="textColor" red="0.14509803921568626" green="0.28235294117647058" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmN-SE-gfr">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.1450980392" green="0.28235294119999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
+                                <state key="normal" title="Resume Recording">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="122" y="437" width="157" height="29"/>
+                                </variation>
+                                <connections>
+                                    <action selector="pauseRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jOv-cJ-rdg"/>
+                                    <action selector="resumeRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6Ch-xf-YD1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1g-tW-L84">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.1450980392" green="0.28235294119999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
+                                <state key="normal" title="Pause Recording">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="122" y="437" width="157" height="29"/>
+                                </variation>
+                                <connections>
+                                    <action selector="pauseRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0EH-5y-npF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="m1g-tW-L84" firstAttribute="top" secondItem="cpm-ra-heY" secondAttribute="bottom" constant="55" id="0oC-eq-VYY"/>
+                            <constraint firstAttribute="centerX" secondItem="m1g-tW-L84" secondAttribute="centerX" id="4Bp-py-UMG"/>
                             <constraint firstItem="cpm-ra-heY" firstAttribute="top" secondItem="TfU-16-url" secondAttribute="bottom" constant="18" id="Ckx-tC-SlX"/>
                             <constraint firstAttribute="centerX" secondItem="Y31-HD-71g" secondAttribute="centerX" id="DUR-qE-3ld"/>
                             <constraint firstAttribute="centerX" secondItem="TfU-16-url" secondAttribute="centerX" id="OlO-pJ-fsI"/>
                             <constraint firstAttribute="centerY" secondItem="TfU-16-url" secondAttribute="centerY" id="ZNb-AB-lKw"/>
                             <constraint firstAttribute="centerX" secondItem="cpm-ra-heY" secondAttribute="centerX" id="i2i-RW-WT0"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Y31-HD-71g" secondAttribute="bottom" constant="50" id="jLc-Px-dTJ"/>
+                            <constraint firstItem="GmN-SE-gfr" firstAttribute="top" secondItem="cpm-ra-heY" secondAttribute="bottom" constant="55" id="mWS-nH-w2J"/>
+                            <constraint firstAttribute="centerX" secondItem="GmN-SE-gfr" secondAttribute="centerX" constant="-0.5" id="toF-Kt-GVq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="TfU-16-url"/>
                                 <exclude reference="Y31-HD-71g"/>
                                 <exclude reference="cpm-ra-heY"/>
+                                <exclude reference="GmN-SE-gfr"/>
+                                <exclude reference="m1g-tW-L84"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="jLc-Px-dTJ"/>
-                                <exclude reference="Ckx-tC-SlX"/>
-                                <exclude reference="i2i-RW-WT0"/>
                                 <exclude reference="OlO-pJ-fsI"/>
                                 <exclude reference="ZNb-AB-lKw"/>
+                                <exclude reference="Ckx-tC-SlX"/>
+                                <exclude reference="i2i-RW-WT0"/>
+                                <exclude reference="mWS-nH-w2J"/>
+                                <exclude reference="toF-Kt-GVq"/>
+                                <exclude reference="0oC-eq-VYY"/>
+                                <exclude reference="4Bp-py-UMG"/>
                                 <exclude reference="DUR-qE-3ld"/>
+                                <exclude reference="jLc-Px-dTJ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -72,21 +113,29 @@
                                 <include reference="TfU-16-url"/>
                                 <include reference="Y31-HD-71g"/>
                                 <include reference="cpm-ra-heY"/>
+                                <include reference="GmN-SE-gfr"/>
+                                <include reference="m1g-tW-L84"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="jLc-Px-dTJ"/>
-                                <include reference="Ckx-tC-SlX"/>
-                                <include reference="i2i-RW-WT0"/>
                                 <include reference="OlO-pJ-fsI"/>
                                 <include reference="ZNb-AB-lKw"/>
+                                <include reference="Ckx-tC-SlX"/>
+                                <include reference="i2i-RW-WT0"/>
+                                <include reference="mWS-nH-w2J"/>
+                                <include reference="toF-Kt-GVq"/>
+                                <include reference="0oC-eq-VYY"/>
+                                <include reference="4Bp-py-UMG"/>
                                 <include reference="DUR-qE-3ld"/>
+                                <include reference="jLc-Px-dTJ"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="ixy-y9-h4K"/>
                     <connections>
+                        <outlet property="pauseButton" destination="m1g-tW-L84" id="fE4-xn-15e"/>
                         <outlet property="recordButton" destination="TfU-16-url" id="pmC-8C-Uqf"/>
                         <outlet property="recordingInProgress" destination="cpm-ra-heY" id="71J-Hp-i1I"/>
+                        <outlet property="resumeButton" destination="GmN-SE-gfr" id="vNo-gT-YVs"/>
                         <outlet property="stopButton" destination="Y31-HD-71g" id="We2-ZX-Flr"/>
                         <segue destination="qsl-td-8Uy" kind="show" identifier="stopRecording" id="jBQ-BE-Lqa"/>
                     </connections>
